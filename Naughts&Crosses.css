@@ -3,20 +3,24 @@ body{
   background-size: fill;
   font-family: Verdana;
   font-size: 16px;
+  color: gold;
  }
- header{
 
+span{
+  color: maroon;
  }
+
 
 #container{
 
   min-height: #board;
-  display: flex;;
+  display: flex;
  }
 
 #board{
   position: center;
-  background-color:darkslategrey;
+  background-image:url(Gryffindor.jpg);
+
   min-width: .entry_slot;
   margin: 0 auto;
 
@@ -29,7 +33,7 @@ body{
 .entry_slot{
   width: 100px;
   height: 100px;
-  border: 1px solid black;
+  border: 2px dashed maroon;
   float: left;
   margin: 0 auto;
 }
