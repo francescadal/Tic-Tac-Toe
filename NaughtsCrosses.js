@@ -44,7 +44,7 @@ $(document).ready(function() {
 
          //if every cell in the empty string is full after passing through, its a tie
         else if (board.every(function(cell){return cell !== "";})) {
-          alert("Neither of you. A tie has occurred. Try again.");
+          alert("A tie has occurred.");
 
         }
          else
