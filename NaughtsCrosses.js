@@ -17,7 +17,7 @@ $(document).ready(function() {
         board[id] = symbol;
         var winner = checkForWin();
         if(winner){
-          alert("The House Cup goes to " + winner);
+          //alert("The House Cup goes to " + winner);
         }
           if (symbol === "X"){
           symbol = "O";
@@ -40,12 +40,14 @@ $(document).ready(function() {
           board[0] === symbol && board[4] === symbol && board[8] === symbol ||
           board[2] === symbol && board[4] === symbol && board[6] === symbol
           )
-        {}
+        { alert("The House Cup goes to " + symbol); }
+
          //if every cell in the empty string is full after passing through, its a tie
-        else if (board.every(function(cell){return cell !=="";})) {
-        return "neither of you. A tie has occurred. Try again.";
+        else if (board.every(function(cell){return cell !== "";})) {
+          alert("Neither of you. A tie has occurred. Try again.");
 
         }
-        else
-        return null;
-        };
+         else
+         return null;
+
+      };
