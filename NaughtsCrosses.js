@@ -17,7 +17,7 @@ $(document).ready(function() {
         board[id] = symbol;
         var winner = checkForWin();
         if(winner){
-          alert("Winner is " + winner);
+          alert("The House Cup goes to " + winner);
         }
           if (symbol === "X"){
           symbol = "O";
@@ -27,18 +27,6 @@ $(document).ready(function() {
       }
   })
 });
-  //this is where i added it
-  //created an array of the possible win combinations
-      var win = [
-          [0,1,2],
-          [3,4,5],
-          [6,7,8],
-          [0,3,6],
-          [1,4,7],
-          [2,5,8],
-          [0,4,8],
-          [2,4,6]
-      ];
 
 
       var checkForWin = function checkForWin() {
@@ -51,11 +39,13 @@ $(document).ready(function() {
           board[2] === symbol && board[5] === symbol && board[8] === symbol ||
           board[0] === symbol && board[4] === symbol && board[8] === symbol ||
           board[2] === symbol && board[4] === symbol && board[6] === symbol
-          ){ alert("Winner is " + symbol)}
+          )
+        {}
+         //if every cell in the empty string is full after passing through, its a tie
+        else if (board.every(function(cell){return cell !=="";})) {
+        return "neither of you. A tie has occurred. Try again.";
 
-
-      };
-
-
-
-
+        }
+        else
+        return null;
+        };
