@@ -53,6 +53,7 @@ $(document).ready(function() {
           board[2] === symbol && board[4] === symbol && board[6] === symbol
           ){ alert("Winner is " + symbol)}
 
+
       };
 
 
