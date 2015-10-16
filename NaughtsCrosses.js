@@ -15,6 +15,18 @@ $(document).ready(function() {
         $target.text(symbol);
         //the click if first an x after the first click it change to "0"
         board[id] = symbol;
+
+        var cellData = {
+          game: {
+            cell: {
+              index: id,
+              value: symbol
+            }
+          }
+        };
+
+        tttapi.markCell(gameID, cellData, gameToken, callback);
+
         var winner = checkForWin();
         if(winner){
           //alert("The House Cup goes to " + winner);

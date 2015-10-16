@@ -1,7 +1,11 @@
 'use strict';
+
+var gameID, gameToken, callback;
+
 var tttapi = {
   gameWatcher: null,
   ttt: 'http://ttt.wdibos.com',
+  //ttt: 'https://d64d8f8d.ngrok.io',
 
   ajax: function(config, cb) {
     $.ajax(config).done(function(data, textStatus, jqxhr) {
@@ -124,7 +128,7 @@ $(function() {
     return wrapper;
   };
 
-  var callback = function callback(error, data) {
+  callback = function(error, data) {
     if (error) {
       console.error(error);
       $('#result').val('status: ' + error.status + ', error: ' +error.error);
@@ -147,6 +151,7 @@ $(function() {
         return;
       }
       callback(null, data);
+      gameToken = data.user.token;
       $('.token').val(data.user.token);
     };
     e.preventDefault();
@@ -162,7 +167,10 @@ $(function() {
   $('#create-game').on('submit', function(e) {
     var token = $(this).children('[name="token"]').val();
     e.preventDefault();
-    tttapi.createGame(token, callback);
+    tttapi.createGame(token, function(err,data){
+      gameID = data.game.id;
+      $('#result').val(JSON.stringify(data, null, 4));
+    });
   });
 
   $('#show-game').on('submit', function(e) {
