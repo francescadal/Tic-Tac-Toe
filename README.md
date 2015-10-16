@@ -11,9 +11,14 @@ When you present your project, you must hand in the following things
 --
 Goal was to create a working Tic-Tac-Toe game.
 
--Is visible online
--Toggles between "X" and "O"
--Declares winner or tie
+*Is visible online
+
+*Toggles between "X" and "O"
+
+*Declares winner or tie
+
+*functional
+
 --
 Challenges
  *Implementing the ajax. Very little time to actually learn what it is. I felt extremely uncomfortable working with it and trying to work it into my game.
